@@ -1,29 +1,37 @@
-const { addNoteHandler, getAllNotesHandler, editNoteByIdHandler, deleteNoteByIdHandler } = require("./handler");
-
-/* Memuat kode konfigurasi routing server seperti menentukan path, method, dan handler yang digunakan. */
+const {
+  tambahBuku,
+  getAllBuku,
+  getBukuById,
+  editBuku,
+  hapusBuku,
+} = require('./handler');
 
 const routes = [
-    {
-        method: 'POST',
-        path: './notes',
-        handler: addNoteHandler,
-    },
-    {
-        method: 'GET',
-        path: './notes',
-        handler: getAllNotesHandler,
-
-    },
-    {
-        method: 'PUT',
-        path: '/notes/{id}',
-        handler: editNoteByIdHandler,
-      },
-      {
-        method: 'DELETE',
-        path: '/notes/{id}',
-        handler: deleteNoteByIdHandler,
-     },
+  {
+    method: 'POST',
+    path: '/books',
+    handler: tambahBuku,
+  },
+  {
+    method: 'GET',
+    path: '/books',
+    handler: getAllBuku,
+  },
+  {
+    method: 'GET',
+    path: '/books/{id}',
+    handler: getBukuById,
+  },
+  {
+    method: 'PUT',
+    path: '/books/{id}',
+    handler: editBuku,
+  },
+  {
+    method: 'DELETE',
+    path: '/books/{id}',
+    handler: hapusBuku,
+  },
 ];
 
 module.exports = routes;
