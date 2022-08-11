@@ -103,7 +103,7 @@ const getAllBuku = (request, h) => {
 			books: filteredbooks.map((book) => ({
 				id: book.id,
 				name: book.name,
-				publisherbook: book.publisher,
+				publisher: book.publisher,
 			})),
 		},
 	});
